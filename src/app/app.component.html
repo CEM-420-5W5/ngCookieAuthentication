@@ -3,6 +3,6 @@
   <button (click)="privateRequest()">Requête privée</button>
   <hr>
   <button (click)="register()">Enregistrer</button>
-  <button (click)="connect()">Connecter</button>
-  <button (click)="logout()">Déconnecter</button>
+  <button *ngIf="!isLoggedIn()" (click)="connect()">Connecter</button>
+  <button *ngIf="isLoggedIn()" (click)="logout()">Déconnecter</button>
 </div>

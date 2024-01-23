@@ -48,4 +48,8 @@ export class AppComponent {
     let result = await lastValueFrom(this.http.get<any>(this.accountBaseUrl + 'Logout'));
     console.log(result);
   }
+
+  isLoggedIn(){
+    return this.cookieService.get(".AspNetCore.Identity.Application");
+  }
 }
