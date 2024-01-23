@@ -34,8 +34,13 @@ export class AppComponent {
     console.log(result);
   }
 
-  async request(){
-    let result = await lastValueFrom(this.http.get<any>(this.accountBaseUrl + 'Data'));
+  async privateRequest(){
+    let result = await lastValueFrom(this.http.get<any>(this.accountBaseUrl + 'PrivateData'));
+    console.log(result);
+  }
+
+  async publicRequest(){
+    let result = await lastValueFrom(this.http.get<any>(this.accountBaseUrl + 'PublicData'));
     console.log(result);
   }
 
